@@ -78,7 +78,7 @@ for i in range(n):
         print('\nCurrent Money:',money,'\n')
     
     print('Date:',b[i],'\nStock Price',y[i],'\nRSI',RSI,'\n')
-    #time.sleep(0.1) 
+    time.sleep(0.5) 
     
 trans = np.linspace(1,len(account),len(account))
     
