@@ -1,0 +1,1 @@
+{'AAPL': {'Sector': 'Tech', 'name': 'namee'}, 'SPY': {'Sector': 'IDK'}, 'SQQQ': {'Sector': 'IDK'}}
