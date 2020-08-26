@@ -6,30 +6,34 @@ Created on Sun Aug 23 15:47:53 2020
 """
 
 #List of dictionaries 
-from temp_ import names 
-from save_ import nested 
-import csv 
+import update 
+import ast 
+
+file = open('dictionary_test.txt','r') 
+a = file.read()
+nested = ast.literal_eval(a) 
+file.close() 
+
 
 while True:
     
     print("Welcome to the dictionary tool: ")
     print("================================")
-    print('1. View\n2. Add\n3. Del\n4. Update\nPress <Q> to go back\n ')
+    print('1. View Stock Keys\n2. Add/Update Keys \n3. Del Keys'\
+          '\n4. Add Stock\nPress <Q> to go back\n ')
     home = input()
     if home == '1' or home == '2' or home == '3' or home == '4':
         if home == '1': 
             while True: 
                 print("\nWhat stock would you like to view?\n")
-                screen_1 = input() 
+                screen_1 = input()
                 if screen_1 == 'Q': 
                     break 
                 FOUND = 'NO' 
-                for i in range(len(names)):  
-                    if screen_1 == names[i]: 
+                if screen_1 in nested: 
                         print('\nWe found it') 
                         print(nested[screen_1]) 
                         FOUND = 'YES' 
-                        break 
                 if FOUND == 'NO':
                     print('\nWe were not able to find that')
 
@@ -39,34 +43,46 @@ while True:
                 screen_1 = input() 
                 if screen_1 == 'Q': 
                     break 
-                FOUND = 'NO' 
-                for i in range(len(names)):  
-                    if screen_1 == names[i]: 
-                        print('\nWhat key are you adding: ') 
-                        screen_2 = input() 
-                        if screen_2 == 'Q': 
-                            break 
-                        print('\nEnter value for ',screen_2,'in ',screen_1,': ') 
-                        screen_3 = input()
-                        if screen_3 == 'Q':
-                            break 
-                        nested[screen_1][screen_2] = screen_3 
-                        #print('\nSuccessfully Done\n')
-                        FOUND = 'YES' 
+                FOUND = 'NO'              
+                if screen_1 in nested:
+                    print('Current Key Layout for ',screen_1,'\n',nested[screen_1])
+                    print('\nWhat key are you adding: ') 
+                    screen_2 = input() 
+                    if screen_2 == 'Q': 
                         break 
+                    print('\nEnter value for ',screen_2,'in ',screen_1,': ') 
+                    screen_3 = input()
+                    if screen_3 == 'Q':
+                        break 
+                    nested[screen_1][screen_2] = screen_3 
+                    print('\nSuccessfully Done\n')
+                    print('Current Key Layout for ',screen_1,'\n',nested[screen_1])
+                    FOUND = 'YES' 
                 if FOUND == 'NO':
                     print('\nWe were not able to find that')
             
         elif home == '3': 
             while True: 
-                print("\nWhat stock would you like to view?\n")
+                print("\nPlease enter Stock Ticker Symbol: \n")
                 screen_1 = input() 
-                print(screen_1)
-                if screen_1 == 'Q':
-                    break  
+                if screen_1 == 'Q': 
+                    break 
+                FOUND = 'NO'              
+                if screen_1 in nested: 
+                    print('Current Key Layout for ',screen_1,'\n',nested[screen_1])
+                    print('\nWhat key are you deleting: ') 
+                    screen_2 = input() 
+                    if screen_2 == 'Q': 
+                        break 
+                    del nested[screen_1][screen_2]
+                    print('\nSuccessfully Done\n')
+                    print('Current Key Layout for ',screen_1,'\n',nested[screen_1])
+                    FOUND = 'YES' 
+                if FOUND == 'NO':
+                    print('\nWe were not able to find that') 
         else: 
             while True: 
-                print("\nWhat stock would you like to view?\n")
+                print("\nEnter a stock symbol to add: \n")
                 screen_1 = input() 
                 print(screen_1)
                 if screen_1 == 'Q':

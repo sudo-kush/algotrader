@@ -1,1 +1,1 @@
-{'AAPL': {'Sector': 'Tech', 'name': 'namee'}, 'SPY': {'Sector': 'IDK'}, 'SQQQ': {'Sector': 'IDK'}}
+{'AAPL': {'Sector': 'jobroni', 'boss': 'player', 'Revenue ': '0'}, 'SPY': {'Sector': 'IDK'}, 'SQQQ': {'Sector': 'IDK'}}
