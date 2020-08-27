@@ -84,9 +84,12 @@ while True:
             while True: 
                 print("\nEnter a stock symbol to add: \n")
                 screen_1 = input() 
-                print(screen_1)
                 if screen_1 == 'Q':
                     break  
+                #print(screen_1)
+                nested[screen_1] = {'Name' : 'Default'}  
+                print('Current Key Layout for ',screen_1,'\n',nested[screen_1])
+                
     
     else: 
         print('Not a valid option\n') 
