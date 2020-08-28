@@ -157,5 +157,5 @@ dictionary = {'Headers': headers, 'Values': Values}
 most_recentdf = pd.DataFrame(data = dictionary)
 most_recentdf = most_recentdf.drop([2,3])
 most_recentdf.reset_index(inplace = True, drop = True)
-df.to_csv('D:/Portfolio Work/Exported csv ALGO/' + sym + 'Daily.csv', encoding = 'utf-8') #set your own location
+most_recentdf.to_csv('D:/Portfolio Work/Exported csv ALGO/' + sym + 'Daily.csv', encoding = 'utf-8') #set your own location
 
