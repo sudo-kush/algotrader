@@ -2,6 +2,7 @@
 # algotrader
 
 
-Start of backtesting soon 
+Dev --> Market Posture 
+  - Shows if market it Bullish, Bearish, or Neutral 
 
 
